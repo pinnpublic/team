@@ -32,7 +32,7 @@ CI/CD
 
 CI
 - 구현 > 저장소(GitHub) push > GitHub Actions(명령어) 실행 > 아주 다양한 명령
-  > push 소스 > 빌드(*.jar) > 도커 이미지 생성
+  > push 소스 > 빌드(*.jar) > 도커 이미지 생성 > Docker Hub push
 
 GitHub Actions 스크립트 파일(yml) 생성하기
 - 로컬 생성 > push > 사용
@@ -53,11 +53,15 @@ push 에러 발생 > ci-cd.yml 때문에 > workflow 권한이 없어서
 - 윈도우 자격 증명 관리자 > Windows 자격 증명 > github 관련 항목 삭제
 
 
+도커 허브 이미지 푸시 검증
+$ docker run -d --name team -p 8080:8080 pinnpublic/team
 
 
 
 
 
+
+CD
 
 
 
