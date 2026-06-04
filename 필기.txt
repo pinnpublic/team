@@ -41,6 +41,20 @@ GitHub Actions 스크립트 파일(yml) 생성하기
 - 프로젝트 루트 > .github > workflows > *.yml
                                       > ci-cd.yml
 
+- $ git init
+- $ git add .
+- $ git commit -m "init"
+- $ git remote add origin https://github.com/pinnpublic/team.git
+- $ git branch -M main
+- $ git push -u origin main
+
+push 에러 발생 > ci-cd.yml 때문에 > workflow 권한이 없어서
+- 프로필 > Settings > Developer Settings > Person access tokens > Tokens(classic) > 
+- 윈도우 자격 증명 관리자 > Windows 자격 증명 > github 관련 항목 삭제
+
+
+
+
 
 
 
