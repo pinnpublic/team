@@ -1,0 +1,58 @@
+프로젝트 생성
+- Name: "team"
+- Language: Java
+- Type: Gradle - Groovy
+- Group: "com.test"
+- Artifact: "team"
+- Package name: "com.test.java"
+- Java: 21
+- Packaging: jar
+- Dependencies:
+    - Spring Web
+    - Lombok
+    - Oracle Driver
+    - Thymeleaf
+    - Spring Boot DevTools
+    - Spring Data JPA
+
+DB 설정 > 주석
+- build.gracle > refresh
+
+
+
+파일
+- "com.test.java.controller" > "MainController.java"
+- templates > "index.html"
+
+
+CI/CD
+- GitHub Actions
+- Jenkins
+
+
+CI
+- 구현 > 저장소(GitHub) push > GitHub Actions(명령어) 실행 > 아주 다양한 명령
+  > push 소스 > 빌드(*.jar) > 도커 이미지 생성
+
+GitHub Actions 스크립트 파일(yml) 생성하기
+- 로컬 생성 > push > 사용
+- GitHub 생성 > 사용
+
+- 프로젝트 루트 > .github > workflows > *.yml
+                                      > ci-cd.yml
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
