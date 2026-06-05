@@ -102,6 +102,7 @@ jobs:
             
             # 3. docker-compose.yml을 기반으로 기존 컨테이너와 *볼륨*을 삭제합니다. > 그냥 수동 삭제하자
             # sudo docker compose down -v
+            sudo docker compose down
             
             # 4. 새 컨테이너를 시작합니다. (oracle이 script.sql을 실행)
             sudo docker compose up -d

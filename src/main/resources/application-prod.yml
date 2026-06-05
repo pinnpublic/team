@@ -8,6 +8,8 @@ spring:
     password: ${DB_PASSWORD}
     
     # AWS > CI/CD 지연으로 타임아웃 길게 지정
+    # - docker-compose.yml > 쿼리 healthcheck 필요 없음
+    # - ci-cd.yml > until 쿼리 필요 없음
     hikari:
       initialization-fail-timeout: 0
       connection-timeout: 30000
