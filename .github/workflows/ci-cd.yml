@@ -104,17 +104,17 @@ jobs:
             # sudo docker compose down -v
             
             # 4. 새 컨테이너를 시작합니다. (oracle이 script.sql을 실행)
-            #sudo docker compose up -d
+            sudo docker compose up -d
             
-            sudo docker compose up -d oracle
+            #sudo docker compose up -d oracle
 
-            until [ "$(sudo docker inspect -f '{{.State.Health.Status}}' oracle)" = "healthy" ]; do
-              echo "waiting oracle..."
-              sleep 5
-            done
+            #until [ "$(sudo docker inspect -f '{{.State.Health.Status}}' oracle)" = "healthy" ]; do
+            #  echo "waiting oracle..."
+            #  sleep 5
+            #done
 
-            echo "oracle healthy. wait more for Oracle/PDB/init stabilization..."
-            sleep 30
+            #echo "oracle healthy. wait more for Oracle/PDB/init stabilization..."
+            #sleep 30
 
             sudo docker compose up -d --force-recreate team
             

@@ -6,4 +6,9 @@ spring:
     url: ${DB_URL}
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
-  
+    
+    # AWS > CI/CD 지연으로 타임아웃 길게 지정
+    hikari:
+      initialization-fail-timeout: 0
+      connection-timeout: 30000
+      validation-timeout: 5000
