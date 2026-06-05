@@ -14,3 +14,11 @@ spring:
       initialization-fail-timeout: 0
       connection-timeout: 30000
       validation-timeout: 5000
+      
+      
+      
+      
+      
+      
+      
+      
