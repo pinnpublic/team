@@ -11,7 +11,8 @@ services:
       - SPRING_PROFILES_ACTIVE=prod
     depends_on:
       oracle:
-        condition: service_healthy
+        condition: service_started
+        #condition: service_healthy
     restart: unless-stopped
     networks:
       - team-network
