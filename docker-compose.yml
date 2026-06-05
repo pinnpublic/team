@@ -30,7 +30,7 @@ services:
     volumes:
       - oracle-data:/opt/oracle/oradata
       - type: bind
-        source: ./init.sql
+        source: ./scripts/init.sql
         target: /container-entrypoint-initdb.d/init.sql
         read_only: true
         bind:
