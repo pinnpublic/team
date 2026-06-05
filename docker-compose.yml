@@ -1,0 +1,50 @@
+services:
+  team:
+    image: ${DOCKER_USERNAME}/team:latest
+    container_name: team
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=${DB_URL}
+      - SPRING_DATASOURCE_USERNAME=${DB_USERNAME}
+      - SPRING_DATASOURCE_PASSWORD=${DB_PASSWORD}
+      - SPRING_PROFILES_ACTIVE=prod
+    depends_on:
+      oracle:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - team-network
+      
+      
+  oracle:
+    image: gvenzl/oracle-xe:18.4.0
+    container_name: oracle
+    ports:
+      - "1521:1521"
+      - "5550:5550"
+    environment:
+      - ORACLE_PASSWORD=${DB_PASSWORD}      
+      - ORACLE_CHARACTERSET=AL32UTF8
+      - TZ=Asia/Seoul
+    volumes:
+      - oracle-data:/opt/oracle/oradata
+      - ./init.sql:/container-entrypoint-initdb.d/init.sql
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "echo 'select 1 from dual;' | sqlplus -s springboot/java1234@//localhost:1521/XEPDB1 | grep -q 1"]
+      interval: 10s
+      timeout: 10s
+      retries: 30
+      start_period: 60s
+    networks:
+      - team-network
+
+networks:
+  team-network:
+    name: team-network
+    driver: bridge
+     
+volumes:
+  oracle-data:
+    name: oracle-data

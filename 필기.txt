@@ -65,6 +65,31 @@ CD
 
 
 
+=============================================
+
+DB 추가
+
+DB 설정 > 주석 해제
+- build.gracle > refresh
+- application.yml
+    - application-dev.yml
+    - application-prod.yml
+
+파일
+- com.test.java.controller > MainController.java
+- templates > "list.html"
+
+- "scripts" > "init.sql"
+
+- "com.test.java.entity" > "Team.java"
+- "com.test.java.repository" > "TeamRepository.java"(I)
+
+구현 완료 > CI/CD
+- Dockerfile > 스프링 부트 이미지
+- 도커 컴포즈 > docker-compose.yml > 스프링 부트 + 오라클
+
+
+
 
 
 
