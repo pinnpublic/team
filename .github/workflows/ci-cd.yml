@@ -47,7 +47,7 @@ jobs:
         name: deploy-files
         path: |
           docker-compose.yml
-          init.sql        
+          scripts/init.sql
         
   deploy:
     needs: build
@@ -79,7 +79,7 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
           # [수정됨] 콤마로 구분된 한 줄로 변경
-          source: "docker-compose.yml,scripts/init.sql"
+          source: "docker-compose.yml,init.sql"
           target: "/home/ubuntu/my-project"
 
       # 4. EC2에 SSH로 접속하여 배포 스크립트를 실행합니다.
