@@ -29,7 +29,7 @@ services:
       - TZ=Asia/Seoul
     volumes:
       - oracle-data:/opt/oracle/oradata
-      - ./init.sql:/container-entrypoint-initdb.d/init.sql
+      - ./scripts/init.sql:/container-entrypoint-initdb.d/init.sql
     restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "echo 'select 1 from dual;' | sqlplus -s springboot/java1234@//localhost:1521/XEPDB1 | grep -q 1"]
