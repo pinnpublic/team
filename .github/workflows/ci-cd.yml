@@ -23,6 +23,7 @@ jobs:
       
     - name: Gradle 실행 권한 부여
       run: chmod +x ./gradlew
+
         
     - name: Gradle 빌드
       run: ./gradlew clean build
@@ -46,7 +47,7 @@ jobs:
         name: deploy-files
         path: |
           docker-compose.yml
-          init.sql
+          init.sql        
         
   deploy:
     needs: build
