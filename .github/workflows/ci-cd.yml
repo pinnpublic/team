@@ -113,6 +113,9 @@ jobs:
               sleep 5
             done
 
+            echo "oracle healthy. wait more for Oracle/PDB/init stabilization..."
+            sleep 30
+
             sudo docker compose up -d --force-recreate team
             
             # 5. 사용하지 않는 Docker 이미지를 정리합니다. 시간이 너무 오래 걸린다.
